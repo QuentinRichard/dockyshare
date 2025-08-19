@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mon_projet
+      POSTGRES_DB: docky_share
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

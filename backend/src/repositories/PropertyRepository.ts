@@ -3,6 +3,6 @@ import { Property } from "../entities/Property";
 
 export const PropertyRepository = AppDataSource.getRepository(Property).extend({
   async findTree() {
-    return this.findTrees();
+   //QRI return this.findTrees();
   },
 });

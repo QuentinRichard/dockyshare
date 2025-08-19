@@ -1,0 +1,29 @@
+2025-08-19T15:08:09.103Z [error]: Erreur lors de l'initialisation de la Data Source: getaddrinfo ENOTFOUND db
+Error: getaddrinfo ENOTFOUND db
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"db"}
+2025-08-19T15:10:17.332Z [error]: Erreur lors de l'initialisation de la Data Source: connect ECONNREFUSED 172.18.0.3:5432
+Error: connect ECONNREFUSED 172.18.0.3:5432
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {"errno":-111,"code":"ECONNREFUSED","syscall":"connect","address":"172.18.0.3","port":5432}
+2025-08-19T15:14:20.467Z [error]: Erreur lors de l'initialisation de la Data Source: Invalid or unexpected token
+SyntaxError: Invalid or unexpected token
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.importSyncForRequire (node:internal/modules/esm/loader:316:18)
+    at loadESMFromCJS (node:internal/modules/cjs/loader:1371:24)
+    at Module._compile (node:internal/modules/cjs/loader:1511:5)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at tryToRequire (/app/node_modules/typeorm/util/ImportUtils.js:21:17)
+2025-08-19T15:21:39.752Z [error]: Erreur lors de l'initialisation de la Data Source: database "docky_share" does not exist
+error: database "docky_share" does not exist
+    at Parser.parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:285:98)
+    at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:122:29)
+    at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:35:38)
+    at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23) {"length":96,"name":"error","severity":"FATAL","code":"3D000","file":"postinit.c","line":"948","routine":"InitPostgres"}

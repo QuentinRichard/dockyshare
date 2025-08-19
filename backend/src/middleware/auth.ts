@@ -9,7 +9,7 @@ export async function authMiddleware(c: Context, next: Next) {
   const token = authHeader.split(' ')[1];
   try {
     const payload = verifyJwt(token);
-    c.set('userId', payload.userId);
+    //QRI c.set('userId', payload.userId);
     await next();
   } catch (error) {
     return c.json({ error: 'Token invalide' }, 401);

@@ -4,13 +4,13 @@ import { IsNotEmpty, IsString, IsOptional } from "class-validator";
 @Entity()
 @Tree("materialized-path")
 export class Property {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn({ type: "integer" })
+  id!: number;
 
   @Column()
   @IsString()
   @IsNotEmpty()
-  name: string;
+  name!: string;
 
   @Column({ nullable: true })
   @IsString()
@@ -18,8 +18,8 @@ export class Property {
   content?: string;
 
   @TreeParent()
-  parent: Property | null;
+  parent!: Property | null;
 
   @TreeChildren()
-  children: Property[];
+  children!: Property[];
 }
