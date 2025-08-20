@@ -30,5 +30,5 @@ AppDataSource.initialize()
     serve({ fetch: app.fetch, port });
   })
   .catch((err) => {
-    logger.error("Erreur lors de l'initialisation de la Data Source:", err);
+    logger.error("Erreur lors de l'initialisation de la Data Source 2:", err);
   });

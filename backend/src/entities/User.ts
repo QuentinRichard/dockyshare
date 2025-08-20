@@ -6,13 +6,19 @@ export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column({ unique: true })
+  @Column('text',{nullable:false, unique: true })
   @IsString()
   @IsNotEmpty()
-  identifiant!: string;
+  identifiant?: string;
 
-  @Column()
+  @Column('text',{nullable:false})
   @IsString()
   @MinLength(6)
-  motDePasse!: string;
+  motDePasse?: string;
+
+  constructor(identifiant?: string, motDePasse?: string){
+    super();
+    this.identifiant = identifiant;
+    this.motDePasse = motDePasse;
+  }
 }

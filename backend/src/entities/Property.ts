@@ -7,12 +7,12 @@ export class Property {
   @PrimaryGeneratedColumn({ type: "integer" })
   id!: number;
 
-  @Column()
+  @Column('text',{nullable:false})
   @IsString()
   @IsNotEmpty()
   name!: string;
 
-  @Column({ nullable: true })
+  @Column('text',{nullable:true})
   @IsString()
   @IsOptional()
   content?: string;

@@ -10,9 +10,9 @@ const auth = new Hono();
 
 auth.post('/register', async (c) => {
   const { identifiant, motDePasse } = await c.req.json();
-  const user = new User();
-  user.identifiant = identifiant;
-  user.motDePasse = await bcrypt.hash(motDePasse, 10);
+  const user = new User(identifiant, await bcrypt.hash(motDePasse, 10));
+  // user.identifiant = identifiant;
+  // user.motDePasse = await bcrypt.hash(motDePasse, 10);
 
   const errors = await validate(user);
   if (errors.length > 0) {
@@ -28,7 +28,7 @@ auth.post('/register', async (c) => {
 auth.post('/login', async (c) => {
   const { identifiant, motDePasse } = await c.req.json();
   const user = await UserRepository.findByIdentifiant(identifiant);
-  if (!user || !(await bcrypt.compare(motDePasse, user.motDePasse))) {
+  if (!user || !(await bcrypt.compare(motDePasse, user.motDePasse!))) {
     logger.warn(`Failed login attempt for user: ${identifiant}`);
     return c.json({ error: 'Identifiant ou mot de passe incorrect' }, 401);
   }

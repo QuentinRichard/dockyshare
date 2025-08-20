@@ -3,12 +3,18 @@ version: '3.8'
 services:
   db:
     image: postgres:15-alpine
+    hostname: db
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    ports:
+      - "5435:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: docky_share
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - /var/lib/postgresql/data-docky:/var/lib/postgresql/data
 
   redis:
     image: redis:alpine
@@ -37,7 +43,7 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./logs/nginx:/var/log/nginx

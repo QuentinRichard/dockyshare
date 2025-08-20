@@ -7,21 +7,24 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export const redis = new Redis({
+export const redis = null; /*new Redis({
   host: "redis",
   port: 6379,
-});
+});*/
 
 export const AppDataSource = new DataSource({
   type: "postgres",
+  // host: "localhost", 
+  // port: 5432,
+  //entities: ["src/entities/**/*.ts"],
   host: "db",
   port: 5432,
+  entities: ["src/entities/**/*.js"],
   username: "postgres",
   password: "postgres",
   database: "docky_share",
   synchronize: true,
   logging: true,
-  entities: ["src/entities/**/*.ts"],
   migrations: ["src/migrations/**/*.ts"],
   subscribers: [],
 });

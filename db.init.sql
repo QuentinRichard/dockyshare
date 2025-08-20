@@ -1,0 +1,4 @@
+--CREATE USER myUser;
+
+CREATE DATABASE docky_share;
+GRANT ALL PRIVILEGES ON DATABASE docky_share TO postgres;
