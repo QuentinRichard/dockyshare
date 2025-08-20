@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <Header /> */}
+      <Header isMenuOpen={false} toggleMenu={() => { }} />
       <main className="flex-grow p-4 flex flex-wrap justify-center">
         {cards.map((card, index) => (
           <Card key={index} {...card} />

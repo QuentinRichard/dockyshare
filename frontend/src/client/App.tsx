@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
-import './styles/global.css';
+import './styles/custom.css';
 
 export default function App() {
   return (

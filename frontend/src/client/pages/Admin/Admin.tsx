@@ -27,7 +27,7 @@ const treeData = [
 export default function Admin() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <Header /> */}
+      <Header isMenuOpen={false} toggleMenu={() => { }} />
       <main className="flex-grow p-4">
         <AdminTree data={treeData} />
       </main>
