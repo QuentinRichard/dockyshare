@@ -10,12 +10,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware pour servir les fichiers statiques
-app.use(express.static(path.resolve(__dirname, '../../public')));
+app.use('/public', express.static(path.resolve(__dirname, '../public')));
 
 // Route pour le SSR
 app.get('*', (req, res) => {
   const indexHtml = fs.readFileSync(
-    path.resolve(__dirname, '../../public/index.html'),
+    path.resolve(__dirname, '../public/index.html'),
     'utf-8'
   );
   const context = {};

@@ -16,3 +16,10 @@ Projet fullstack avec :
    ```bash
    docker-compose up --build
    ```   
+
+## Postgres connection
+
+sudo psql -U postgres -p 5432 -h localhost -W
+
+into docker compose
+sudo psql -U postgres -p 5435 -h localhost -W
