@@ -8,7 +8,9 @@
     "watch:css": "postcss styles.css -o src/styles/styles.css -w",
     "build:client": "webpack --config webpack.client.config.js",
     "build:server": "webpack --config webpack.server.config.js",
+    "prebuild": "npm run build:css",
     "build": "npm run build:client && npm run build:server",
+    "postbuild": "cp src/styles/* public/styles/",
     "start": "node dist/server.js",
     "dev": "nodemon --watch 'src/**/*' --exec 'npm run build && npm start'"
   },
